@@ -1,0 +1,22 @@
+
+output_dir: './workdirs/ffhq2'
+structure: 'linear'
+dataset:
+  img_dir: '../ffhq128' 
+  folder: True
+  resolution: 128
+sched:
+  epochs: [10, 10, 20, 20, 20, 20]
+  batch_sizes: [128, 128, 128, 64, 32, 16]
+  fade_in_percentage: [50, 50, 50, 50, 50, 50, 50, 50, 50]
+model:
+  d_optim:
+    beta_1: 0.0
+    beta_2: 0.99
+    eps: 1e-8
+    learning_rate: 0.003
+  g_optim:
+    beta_1: 0.0
+    beta_2: 0.99
+    eps: 1e-8
+    learning_rate: 0.003
